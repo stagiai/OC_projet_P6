@@ -103,12 +103,6 @@ exports.likeSauce = (req, res, next) => {
 
 
 
-    // like = 1 (likes = +1)
-    // utilisation de la méthode js includes()
-    // utilisation de l'opérateur $inc (mongoDB)
-    // utilisation de l'opérateur $push (mongoDB)
-    // utilisation de l'opérateur $pull (mongoDB)
-
     if(!sauce.usersLiked.includes(req.body.userId) && req.body.like === 1) {
         console.log("userId n'est pas dans BDD et requête front like égale à 1");
     
@@ -180,12 +174,6 @@ exports.likeSauce = (req, res, next) => {
         .catch((error) => res.status(400).jason({error}));
 
     }
-
-
-
-
-
-
 
     })
     .catch((error) => res.status(404).jason({error}));
