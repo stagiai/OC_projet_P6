@@ -171,10 +171,10 @@ exports.likeSauce = (req, res, next) => {
         }
         )
         .then(() => res.status(201).json({message: 'sauce dislike 0'}))
-        .catch((error) => res.status(400).jason({error}));
+        .catch((error) => res.status(400).json({error}));
 
     }
 
     })
-    .catch((error) => res.status(404).jason({error}));
+    .catch((error) => res.status(404).json({error}));
 }
