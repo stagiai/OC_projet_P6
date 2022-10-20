@@ -1,5 +1,7 @@
 const express = require('express');
 
+//const helmet = require('helmet');
+
 require('dotenv').config();
 console.log(process.env);
 
@@ -8,6 +10,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 const app = express();
+
+//app.use(helmet());
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user')
