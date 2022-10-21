@@ -33,7 +33,7 @@ exports.login = (req, res, next) => {
             .then(valid => {
                 console.log('user password valid '+valid); // ------------------ debug ----------------------
                 if (!valid) {
-                    res.status(401).json({message: 'Paire identifiant/mot de passe incorrecte'});
+                    res.status(401).json({error: 'Paire identifiant/mot de passe incorrecte'});
                 } else {
                     res.status(200).json({
                         userId: user._id,

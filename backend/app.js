@@ -1,6 +1,9 @@
 const express = require('express');
 
-//const helmet = require('helmet');
+// import de helmet d'Express
+const helmet = require('helmet');
+console.log('contenu de helmet :');
+console.log(helmet);
 
 require('dotenv').config();
 console.log(process.env);
@@ -11,7 +14,8 @@ const path = require('path');
 
 const app = express();
 
-//app.use(helmet());
+// lancement du middleware helmet avec contrôle de l'origine quand cross-origin
+app.use(helmet.referrerPolicy({policy: "strict-origin-when-cross-origin"}));
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user')
